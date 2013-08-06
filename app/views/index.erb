@@ -1,23 +1,163 @@
-<div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, world!</p>
+<html>
+<head>
+  <title>The FutureList: Chat, Buy or Sell!</title>
+</head>
 
-  <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
-</div>
+<body class="homepage">
+
+  <div id="container">
+    <section class="body">
+
+      <form id="search" action="/search" method="GET">
+        <input type="text" 
+        <div>search the FutureVerse!</div>
+        <select id="category" name="category">
+          <option value="nb">Nanobots and Adv. Genetics</option>
+          <option value="ak">Knowledge Work Automation</option>
+          <option value="ar">Advanced Robotics</option>
+          <option value="ee">Embedded Electronics</option>
+          <option value="bc">Bionics and Interfaces</option>
+          <option value="er">The Energy Revolution</option>
+          <option value="sp">Off-World / Space Travel</option>
+          <option value="st">Strong AI / The Singularity</option>
+          <option value="co">Component Tech Research</option>
+          <option value="ft">Misc FutureTalk</option>
+        </select>
+        <input id="go" type="submit" value="submit">
+      </form>
+
+    </section>
+  </div>
+
+  <div id="nb" class="col">
+    <h2 class="banner"><a href="nano">Nanobots and Adv. Genetics</a></h2>
+
+    <ul id="nb0">
+      <li><a href="drug">Drug Delivery Systems</a></li>
+      <li><a href="target">Targeted Therapies</a></li>
+      <li><a href="manip">Genetic Manipulation</a></li>
+      <li><a href="cosmetic">Cosmetic Procedures</a></li>
+      <li><a href="aging">Reversing Disability and Aging</a></li>
+      <li><a href="prevent">Preventative Health</a></li>
+    </ul>
+  </div>
+
+  <div id="ak" class="col">
+    <h2 class="banner"><a href="autom">Knowledge Work Automation</a></h2>
+
+    <ul id="ak0">
+      <li><a href="prod">Enhancing Productivity</a></li>
+      <li><a href="human">Replacing Humans</a></li>
+      <li><a href="nlp">Natural Language Processing</a></li>
+      <li><a href="markets">Automated Markets</a></li>
+    </ul>
+  </div>
+
+  <div id="ar" class="col">
+    <h2 class="banner"><a href="robots">Advanced Robotics</a></h2>
+
+    <ul id="ar0">
+      <li><a href="cars">Driverless Cars</a></li>
+      <li><a href="consumer">Consumer Robotics</a></li>
+      <li><a href="supply">Supply Chain Automation</a></li>
+      <li><a href="dext">High-Dexterity Robotics</a></li>
+    </ul>
+  </div>
+
+
+  <div id="ee" class="col">
+    <h2 class="banner"><a href="embed">Embedded Electronics</a></h2>
+
+    <ul id="ee0">
+      <li><a href="sensors">Sensors</a></li>
+      <li><a href="iot">Internet of Things (RFID)</a></li>
+      <li><a href="secure">Security</a></li>
+    </ul>
+  </div>
+
+  <div id="bc" class="col">
+    <h2 class="banner"><a href="bionics">Bionics and Interfaces</a></h2>
+
+    <ul id="bc0">
+      <li><a href="aug">Human Augmentation</a></li>
+      <li><a href="disable">Countering Disability</a></li>
+      <li><a href="bci">Brain-Computer Interfaces</a></li>
+    </ul>
+  </div>
+
+  <div id="er" class="col">
+    <h2 class="banner"><a href="energy">The Energy Revolution</a></h2>
+
+    <ul id="er0">
+      <li><a href="renew">Renewables</a></li>
+      <li><a href="grid">Smart / High-Throughput Grids</a></li>
+      <li><a href="evs">Electric Vehicles</a></li>
+      <li><a href="fourth">Fourth Gen Nuclear Reactors</a></li>
+      <li><a href="thorium">Thorium Reactors</a></li>
+      <li><a href="fusion">Nuclear Fusion</a></li>
+    </ul>
+  </div>
+
+  <div id="sp" class="col">
+    <h2 class="banner"><a href="space">Off-World / Space Travel</a></h2>
+
+    <ul id="sp0">
+      <li><a href="priv">Private Travel</a></li>
+      <li><a href="asteroid">Asteroid Mining</a></li>
+      <li><a href="elev">Space Elevators</a></li>
+      <li><a href="colonize">Moon / Mars Colonization</a></li>
+      <li><a href="terraform">Small-Scale Terraforming</a></li>
+    </ul>
+  </div>
+
+  <div id="st" class="col">
+    <h2 class="banner"><a href="strongai">Strong AI / The Singularity</a></h2>
+
+    <ul id="st0">
+      <li><a href="quantum">Quantum Computing</a></li>
+      <li><a href="dna">DNA Computing</a></li>
+      <li><a href="singul">Breaching Human Intelligence</a></li>
+      <li><a href="skynet">Skynet</a></li>
+    </ul>
+  </div>
+
+  <div id="co" class="col">
+    <h2 class="banner"><a href="research">Component Tech Research</a></h2>
+
+    <ul id="co0">
+      <li><a href="store">Energy Storage</a></li>
+      <li><a href="battery">Rapid Batteries</a></li>
+      <li><a href="graphene">Graphene</a></li>
+      <li><a href="hbp">Human Brain Project</a></li>
+      <li><a href="neural">Deep Learning / Neural Networks</a></li>
+      <li><a href="biopoly">Biopolymers</a></li>
+      <li><a href="alloys">Advanced Alloys</a></li>
+      <li><a href="gene">Genetics Research</a></li>
+      <li><a href="bayes">Bayesian Machine Learning</a></li>
+      <li><a href="parallel">Software Parallelization</a></li>
+      <li><a href="bigdata">Massive Data Analysis</a></li>
+      <li><a href="bioinf">Bioinformatics</a></li>
+      <li><a href="fuel">Fuel Research</a></li>
+      <li><a href="lhc">LHC / Accelerator Research</a></li>
+      <li><a href="data">Global Data Collection</a></li>
+      <li><a href="eco">Ecological Research</a></li>
+      <li><a href="broadband">Global Broadband</a></li>
+      <li><a href="mobile">Mobile Expansion</a></li>            
+    </ul>
+  </div>
+
+  <div id="ft" class="col">
+    <h2 class="banner"><a href="talk">Misc FutureTalk</a></h2>
+
+    <ul id="ft0">
+      <li><a href="news">Random News</a></li>
+      <li><a href="projects">New Projects</a></li>
+      <li><a href="careers">Awesome Careers</a></li>
+      <li><a href="change">Changing the World</a></li>
+      <li><a href="plans">My Plans</a></li>
+      <li><a href="links">Useful Links</a></li>
+    </ul>
+  </div>
+
+</body>
+</html>
