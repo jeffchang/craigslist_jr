@@ -1,12 +1,27 @@
-<%= "No matching posts found!" if @posts == [] %><% @posts.each do |post| %>
 <html>
-	<head>
-		<title></title>
-	</head>
-	<body>
-		<a href=<%= "#{post.subcategory.name}/#{post.id}" %>><%= post.title %></a><br>
-		<br>
-		<br>
+<head>
+<title>Results</title>
+</head>
+<body>
+	<div class="container">
+		<% if @search_term != "" %>
+			<h2>Search results for term '<%= @search_term %>'<%= " in your chosen category" if @category != "all" %>:</h2>
+		<% else %>
+			<h2><%= @category == "all" ? "All Posts:" : "All posts in this category:" %></h2>
 		<% end %>
-	</body>
+		<br>
+		<%= "No matching posts found!" if @posts == [] %>
+		<% @posts.each do |post| %>
+			<a href=<%= "#{post.subcategory.name}/#{post.id}" %>><%= post.title %></a>
+			<p><i>posted at <%= post.created_at %> in category '<%= post.subcategory.full_title %>'</i></p>
+			<br><br><br>
+		<% end %>
+	</div>
+	<div class="container">
+		<br>
+		<form action="/" method="get">
+			<input type="submit" value="Home">
+		</form>
+	</div>
+</body>
 </html>

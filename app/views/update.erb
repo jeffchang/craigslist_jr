@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<title>Update Post</title>
+		<script>
+		function goBack()
+		{window.history.back()}
+		</script>
+	</head>
+	<body>
+	<div class="container">
+		<h1>Update your post!</h1>
+		<form id="new_post" action="/update" method="post">
+			<h3>Title:</h3>
+			<input type="text" name="title" size="100" value=<%=@post.title%>>
+			<br><br>
+			<div>Select a category:</div>
+			<select name="category">
+				<% @counter = 0 %>
+				<% @main_categories.each do |maincat| %>
+						<option value=<%=maincat.name%>><%=maincat.full_title%></option>
+					<% @subcats_of_main[@counter].each do |subcat| %>
+						<option value=<%=subcat.name%> <%= "selected = \"selected\"" if @post.subcategory.name == subcat.name %>><%="-- #{subcat.full_title}"%></option>
+					<% end %>
+					<% @counter += 1 %>
+				<% end %>
+			</select>
+			<br><br><br>
+			<h3>Your Post:</h3>
+			<textarea name="description" rows="6" cols="50"><%=@post.description%></textarea>
+			<br><br><br>
+			<div>Price, if applicable:</div>
+			<input type="text" name="price" size="25" value=<%= "#{(@post.price.to_s[0..-3] + "." + @post.price.to_s[-2..-1])}" if @post.price >= 100 %>>
+			<br><br>
+			<div>Email address:</div>
+			<input type="text" name="email" size="60" value=<%=@post.email%>>
+			<br>
+			<br>
+			<input type="hidden" name="num" value=<%=@key%>>
+			<input type="submit" value="Submit my updated post!">
+		</form>
+	</div>
+	<div class="container">
+		<br>
+		<form action="/" method="get">
+			<input type="button" value="Back" onclick="goBack()">
+			<input type="submit" value="Home">
+		</form>
+	</div>	
+	</body>
+</html>

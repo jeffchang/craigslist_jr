@@ -5,6 +5,18 @@
 	<body>
 		<h2>Thanks so much for submitting your post!</h2>
 		<div class="container">
-			<p></div>
+			<p>You can find your post at:</p>
+			<a href=<%="/#{@category}/#{@post_id}"%>><%="http://localhost:9393/#{@category}/#{@post_id}"%></a>
+			<br>
+			<br>
+			<p>You can also edit your post using this link:</p>
+			<a href=<%="/edit/#{@post_key}"%>><%="http://localhost:9393/edit/#{@post_key}"%></a>
+		</div>
+		<div class="container">
+			<br>
+			<form action="/" method="get">
+				<input type="submit" value="Home">
+			</form>
+		</div>
 	</body>
 </html>

@@ -4,15 +4,13 @@ get '/' do
   erb :index
 end
 
-post '/save' do
-  Maincategory.all.each do |category|
-    if category.name == params[:category]
-      subcat = Subcategory.where("maincategory = ?", category.name).sample
-      params[:category] = subcat.name
-    end
-  end
-  saved_post = Post.create({params})
-  @post_id = saved_post.id
+post '/create' do
+  create_post
+  erb :thanks
+end
+
+post '/update' do
+  update_post
   erb :thanks
 end
 
@@ -26,9 +24,9 @@ post '/posts' do
   erb :new
 end
 
-post '/posts/:num' do
-  params[:num]
-
+get '/edit/:num' do
+  pass_categories
+  edit_by_key
   erb :update
 end
 

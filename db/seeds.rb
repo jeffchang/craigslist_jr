@@ -1,4 +1,5 @@
 require 'faker'
+require 'securerandom'
 
 @main_categories = {
 	"nano" => ["drug", "target", "manip", "cosmetic", "aging", "prevent"],
@@ -56,6 +57,9 @@ require 'faker'
 	"eco" => "Ecological Research",
 	"broadband" => "Global Broadband",
 	"mobile" => "Mobile Expansion",
+	"sensors" => "Sensors",
+	"iot" => "Internet of Things (RFID)",
+	"secure" => "Security",
 	"aug" => "Human Augmentation",
 	"disable" => "Countering Disability",
 	"bci" => "Brain-Computer Interfaces",
@@ -89,6 +93,6 @@ end
 
 Subcategory.all.each do |category|
 	10.times do
-		Post.create({title: Faker::Lorem.words(num = 5), description: Faker::Lorem.paragraph(sentence_count = 3), price: rand(1000..5000), email: Faker::Internet.email, subcategory: category})
+		Post.create({title: Faker::Lorem.words(num = 5), description: Faker::Lorem.paragraph(sentence_count = 3), price: rand(1000..5000), email: Faker::Internet.email, subcategory: category, post_key: SecureRandom.hex(12)})
 	end
 end

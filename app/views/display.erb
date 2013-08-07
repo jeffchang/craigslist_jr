@@ -1,8 +1,31 @@
-<%= @post.title %>
-<h5>----------------------------</h5>
-<%= @post.description %>
-<br>
-<%= @post.email %>
-<br>
-<%= "$#{(@post.price.to_s[0..-3] + "." + @post.price.to_s[-2..-1])}" %>
-<br><br><br>
+<html>
+	<head>
+		<title>Display Post</title>
+		<script>
+		function goBack()
+		{window.history.back()}
+		</script>
+	</head>
+	<body>
+		<div class="container">
+		<h3>
+		<%= @post.title %>
+		<br>
+			<%= "-"*(@post.title.length * 1.4) %>
+		</h3>
+		<h4>The Details:</h4>
+			<%= @post.description %>
+		<br><br><br>
+		<%= "Contact me at #{@post.email}" %>
+		<br><br><br>
+		<%= "Price: $#{(@post.price.to_s[0..-3] + "." + @post.price.to_s[-2..-1])}" if @post.price >= 100 %>
+		</div>
+		<div class="container">
+			<br>
+			<form action="/" method="get">
+				<input type="button" value="Back" onclick="goBack()">
+				<input type="submit" value="Home">
+			</form>
+		</div>
+	</body>
+</html>
