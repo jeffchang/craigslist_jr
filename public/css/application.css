@@ -7,3 +7,11 @@
 th {
   text-align: left;
 }
+
+ul {list-style-type:none;}
+
+ul.justify {margin-left:-2.5em;}
+
+table, th, td {vertical-align:top;}
+
+td {padding:10px;}

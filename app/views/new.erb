@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title>New Post</title>
+	</head>
+	<body>
+	<div class="container">
+		<h1>Add a new post!</h1>
+		<form id="new_post" action="/save" method="post">
+			<h3>Title:</h3>
+			<input type="text" name="title" size="100" placeholder="Your title here">
+			<br><br>
+			<div>Select a category:</div>
+			<select name="category">
+				<% @counter = 0 %>
+				<% @main_categories.each do |maincat| %>
+						<option value=<%=maincat.name%>><%=maincat.full_title%></option>
+					<% @subcats_of_main[@counter].each do |subcat| %>
+						<option value=<%=subcat.name%>><%="-- #{subcat.full_title}"%></option>
+					<% end %>
+					<% @counter += 1 %>
+				<% end %>
+			</select>
+			<br><br><br>
+			<h3>Your Post:</h3>
+			<textarea name="description" rows="6" cols="50">
+			</textarea>
+			<br><br><br>
+			<input type="text" name="price" size="25" placeholder="Type a price here, if applicable">
+			<br><br>
+			<input type="text" name="email" size="60" placeholder="Enter your email here, if you're seeking direct responses">
+			<br>
+			<input type="submit" value="Submit my post!">
+		</form>
+	</div>
+	</body>
+</html>

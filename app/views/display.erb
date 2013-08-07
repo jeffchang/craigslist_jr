@@ -1,0 +1,8 @@
+<%= @post.title %>
+<h5>----------------------------</h5>
+<%= @post.description %>
+<br>
+<%= @post.email %>
+<br>
+<%= "$#{(@post.price.to_s[0..-3] + "." + @post.price.to_s[-2..-1])}" %>
+<br><br><br>

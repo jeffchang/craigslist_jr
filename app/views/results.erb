@@ -1,0 +1,12 @@
+<%= "No matching posts found!" if @posts == [] %><% @posts.each do |post| %>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<a href=<%= "#{post.subcategory.name}/#{post.id}" %>><%= post.title %></a><br>
+		<br>
+		<br>
+		<% end %>
+	</body>
+</html>
